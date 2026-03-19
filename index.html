@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>我的官网</title>
+    <meta charset="utf-8">
+    <title>公司官网</title>
 </head>
 <body>
+
 <h1 id="title"></h1>
 <p id="body"></p>
-
-<!-- 图片 -->
 <img id="image" style="max-width:300px;" />
 
 <script>
@@ -17,7 +16,6 @@
       .then(data => {
         document.getElementById('title').innerText = data.title;
         document.getElementById('body').innerText = data.body;
-
         if (data.image) {
           document.getElementById('image').src = data.image;
         }
@@ -26,25 +24,3 @@
 
 </body>
 </html>
-
-<script>
-    fetch('/content/home.json')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('title').innerText = data.title;
-        document.getElementById('body').innerText = data.body;
-      });
-</script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-<script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-</script>
