@@ -6,6 +6,7 @@ backend:
   token: "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"# 你的代码分支
  # base_url: https://decap-cms-oauth.18438098429.workers.dev 你的 Worker 域名
 
+
 media_folder: "images/uploads"   # 图片上传目录（和你项目结构一致）
 public_folder: "/images/uploads" # 前端访问路径
 
