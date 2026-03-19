@@ -2,21 +2,45 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>CMS</title>
+    <title>Content Manager</title>
 
-    <!-- 👇 必须加这个 -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
+    <!-- 关键：关闭 Netlify 登录 -->
     <script>
         window.CMS_MANUAL_INIT = true;
     </script>
 
-    <script src="https://unpkg.com/decap-cms@3.1.0/dist/decap-cms.js"></script>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
 <script>
     CMS.init({
-      config: "/admin/config.yml"
+      config: {
+        backend: {
+          name: "github",
+          repo: "zheng-yujie1122/test",
+          branch: "main"
+        },
+        media_folder: "images/uploads",
+        public_folder: "/images/uploads",
+        collections: [
+          {
+            name: "pages",
+            label: "页面内容",
+            files: [
+              {
+                label: "首页",
+                name: "home",
+                file: "content/home.json",
+                fields: [
+                  { label: "标题", name: "title", widget: "string" },
+                  { label: "内容", name: "body", widget: "text" },
+                  { label: "图片", name: "image", widget: "image" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     });
 </script>
 </body>
