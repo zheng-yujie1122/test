@@ -1,9 +1,7 @@
 backend:
   name: github
-  repo: zheng-yujie1122/test   # 👉 你的仓库
+  repo: zheng-yujie1122/test
   branch: main
-
-  client_id: Ov23liafPifXK26zIpv3
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -19,4 +17,3 @@ collections:
           - { label: "标题", name: "title", widget: "string" }
           - { label: "内容", name: "body", widget: "text" }
           - { label: "图片", name: "image", widget: "image" }
-
