@@ -2,6 +2,7 @@ backend:
   name: github
   repo: zheng-yujie1122/test   # 👉 你的仓库
   branch: main
+  auth_type: implicit
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
