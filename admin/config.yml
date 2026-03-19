@@ -3,7 +3,7 @@ backend:
   name: github
   repo: zheng-yujie1122/test  # 你的 GitHub 仓库名，格式：用户名/仓库名
   branch: main
-  auth_type: implicit # 你的默认分支
+  auth_type: token
 
 media_folder: "images/uploads" # 图片上传目录，和你项目结构对应
 public_folder: "/images/uploads"
