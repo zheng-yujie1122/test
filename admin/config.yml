@@ -10,7 +10,4 @@ collections:
     folder: "content"   # 存放 Markdown 的文件夹
     create: true
     slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Image", name: "image", widget: "image" }
+
