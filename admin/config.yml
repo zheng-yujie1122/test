@@ -1,13 +1,14 @@
 backend:
   name: github
-  repo: zheng-yujie1122/test
+  repo: zheng-yujie1122/test  # 👉 你的仓库
   branch: main
+  auth_type: implicit
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "images/uploads"      # 上传的媒体文件存放位置
+public_folder: "/images/uploads"    # 网站访问路径
 
 collections:
-  - name: "pages"
+  - name: "pages"        # 原来的页面 collection，name 必须唯一
     label: "页面内容"
     files:
       - label: "首页"
@@ -17,3 +18,14 @@ collections:
           - { label: "标题", name: "title", widget: "string" }
           - { label: "内容", name: "body", widget: "text" }
           - { label: "图片", name: "image", widget: "image" }
+
+  - name: "blog"         # 新增 collection，name 唯一，不和 pages 冲突
+    label: "博客内容"
+    files:
+      - label: "文章"
+        name: "article"
+        file: "content/article.json"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "内容", name: "body", widget: "text" }
+          - { label: "封面图", name: "cover_image", widget: "image" }
