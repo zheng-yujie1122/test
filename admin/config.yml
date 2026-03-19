@@ -1,21 +1,4 @@
-backend:
-  name: git-gateway
-  branch: main
-
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
-
-collections:
-  - name: "pages"
-    label: "页面内容"
-    files:
-      - label: "首页"
-        name: "home"
-        file: "content/home.json"
-        fields:
-          - label: "标题"
-            name: "title"
-            widget: "string"
-          - label: "内容"
-            name: "body"
-            widget: "text"
+# 纯静态站点的 config.yml（Cloudflare Pages 场景）
+build:
+  command: ""  # 无构建命令，直接发布静态文件
+  publish: "." # 发布根目录下的所有静态文件
