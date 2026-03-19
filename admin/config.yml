@@ -1,4 +1,20 @@
-# 纯静态站点的 config.yml（Cloudflare Pages 场景）
-build:
-  command: ""  # 无构建命令，直接发布静态文件
-  publish: "." # 发布根目录下的所有静态文件
+# admin/config.yml
+backend:
+  name: github
+  repo: zheng-yujie1122/test  # 你的 GitHub 仓库名，格式：用户名/仓库名
+  branch: main
+  auth_type: implicit # 你的默认分支
+  base_url: https://github.com # 关键：替换为你的 OAuth 服务地址（Cloudflare 场景）
+
+media_folder: "images/uploads" # 图片上传目录，和你项目结构对应
+public_folder: "/images/uploads"
+
+collections:
+  - name: "article"
+    label: "文章"
+    folder: "content"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "内容", name: "body", widget: "markdown"}
