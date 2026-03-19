@@ -2,6 +2,8 @@ backend:
   name: github
   repo: zheng-yujie1122/test  # 你的 GitHub 仓库名
   branch: main
+  base_url: https://test.18438098429.workers.dev
+  auth_endpoint: /auth  # 必须和 js 里的 pathname 对应
 
 media_folder: "images/uploads"   # 图片上传目录（和你项目结构一致）
 public_folder: "/images/uploads" # 前端访问路径
