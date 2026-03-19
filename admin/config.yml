@@ -7,7 +7,7 @@ public_folder: "/images/uploads"
 collections:
   - name: "home_page"       # 改为唯一
     label: "Home Page"
-    folder: "content/home"   # 可以建一个子文件夹避免冲突
+    folder: "content"   # 可以建一个子文件夹避免冲突
     create: true
     slug: "{{slug}}"
     fields:
