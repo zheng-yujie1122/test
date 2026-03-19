@@ -1,8 +1,6 @@
 backend:
-  name: github
-  repo: zheng-yujie1122/test
+  name: git-gateway
   branch: main
-  auth_type: implicit
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -15,7 +13,9 @@ collections:
         name: "home"
         file: "content/home.json"
         fields:
-          - { label: "标题", name: "title", widget: "string" }
-          - { label: "内容", name: "body", widget: "text" }
-          - { label: "图片", name: "image", widget: "image" }
-
+          - label: "标题"
+            name: "title"
+            widget: "string"
+          - label: "内容"
+            name: "body"
+            widget: "text"
