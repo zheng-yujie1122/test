@@ -1,19 +1,16 @@
 backend:
-  name: github
-  repo: zheng-yujie1122/test  # 你的 GitHub 仓库名
-  branch: main
-  base_url: https://test.18438098429.workers.dev
-  auth_endpoint: /auth  # 必须和 js 里的 pathname 对应
-
-media_folder: "images/uploads"   # 图片上传目录（和你项目结构一致）
-public_folder: "/images/uploads" # 前端访问路径
+  name: git-gateway
+  branch: main  # GitHub 主分支
+media_folder: "images/uploads"  # 上传图片存储路径
+public_folder: "/images/uploads"
 
 collections:
-  - name: "article"
-    label: "文章"
-    folder: "content"
+  - name: "pages"       # 内容类型
+    label: "Pages"
+    folder: "content"   # 存放 Markdown 的文件夹
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "标题", name: "title", widget: "string"}
-      - {label: "内容", name: "body", widget: "markdown"}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image" }
