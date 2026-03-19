@@ -2,4 +2,4 @@
 
 这里是首页内容。
 
-![Banner](images/uploads/banner.png)
+![Banner](images/uploads/cover.png)
