@@ -2,13 +2,13 @@ backend:
   name: github
   repo: zheng-yujie1122/test   # GitHub 仓库
   branch: main
-  auth_type: implicit         # 直接用 GitHub 登录
+  auth_type: implicit          # 直接用 GitHub 登录
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "images/uploads"  # 上传的媒体文件放置位置
+public_folder: "/images/uploads"  # 网站访问路径
 
 collections:
-  - name: "pages"
+  - name: "pages"                # 首页 collection，唯一
     label: "页面内容"
     files:
       - label: "首页"
@@ -18,3 +18,13 @@ collections:
           - { label: "标题", name: "title", widget: "string" }
           - { label: "内容", name: "body", widget: "text" }
           - { label: "图片", name: "image", widget: "image" }
+
+  - name: "blog"                 # 博客 collection，唯一
+    label: "博客内容"
+    files:
+      - label: "文章"
+        name: "article"
+        file: "content/article.json"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "内容", name: "body", widget: "text" }
