@@ -13,5 +13,9 @@ collections:
         name: "home"
         file: "content/home.json"
         fields:
-          - { label: "标题", name: "title", widget: "string" }
-          - { label: "内容", name: "body", widget: "text" }
+          - label: "标题"
+            name: "title"
+            widget: "string"
+          - label: "内容"
+            name: "body"
+            widget: "text"
