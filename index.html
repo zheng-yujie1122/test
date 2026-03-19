@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <title>公司官网</title>
+  <meta charset="UTF-8">
+  <title>我的网站</title>
 </head>
 <body>
+  <h1 id="page-title">Loading...</h1>
+  <div id="page-body"></div>
+  <img id="page-image" src="" alt="">
 
-<h1 id="title"></h1>
-<p id="body"></p>
-<img id="image" style="max-width:300px;" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    async function loadPage() {
+      const res = await fetch('content/index.md'); // GitHub 上的 Markdown
+      const text = await res.text();
+      
+      // 简单解析 Markdown 前三行为 title，其余为 body
+      const lines = text.split('\n');
+      document.getElementById('page-title').innerText = lines[0].replace(/^# /,'');
+      document.getElementById('page-body').innerHTML = marked(lines.slice(1).join('\n'));
 
-<script>
-    fetch('/content/home.json')
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById('title').innerText = data.title;
-        document.getElementById('body').innerText = data.body;
-        if (data.image) {
-          document.getElementById('image').src = data.image;
-        }
-      });
-</script>
-
+      // 假设图片在 Markdown 最后一行 ![Alt](url)
+      const imgMatch = text.match(/!\[.*\]\((.*)\)/);
+      if(imgMatch) document.getElementById('page-image').src = imgMatch[1];
+    }
+    loadPage();
+  </script>
 </body>
 </html>
