@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: zheng-yujie1122/test   # 👉 你的仓库
   branch: main
 
 media_folder: "images/uploads"
@@ -13,15 +14,6 @@ collections:
         name: "home"
         file: "content/home.json"
         fields:
-          - label: "标题"
-            name: "title"
-            widget: "string"
-
-          - label: "内容"
-            name: "body"
-            widget: "text"
-
-          # 👇 新增这个（图片）
-          - label: "封面图片"
-            name: "image"
-            widget: "image"
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "内容", name: "body", widget: "text" }
+          - { label: "图片", name: "image", widget: "image" }
